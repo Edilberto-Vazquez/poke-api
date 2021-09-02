@@ -1,5 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import HelloWorld from "./components/HelloWorld";
+import store from "./app/store";
+import { Provider } from "react-redux";
+import PokemonList from "./pages/PokemonList";
 
-ReactDOM.render(<HelloWorld />, document.getElementById("app"));
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <PokemonList />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("app")
+);
